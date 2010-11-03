@@ -1,3 +1,17 @@
 #jqt.fullscreen #home .info {
 	display: none;
 }
+
+#photos {
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+#photos img {
+    width: 75px;
+    height: 75px;
+    display: block;
+    float: left;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
