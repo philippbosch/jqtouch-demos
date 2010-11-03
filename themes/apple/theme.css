@@ -117,6 +117,8 @@ body {
     font-weight: bold;
     text-decoration: inherit;
     color: inherit;
+    margin: 10px;
+    text-shadow: rgba(0,0,0,0.5) 0 -1px;
 }
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
