@@ -1,4 +1,4 @@
-$.jQTouch({
+var jQT = $.jQTouch({
     icon: 'icon.png',
     icon4: 'icon4.png',
     addGlossToIcon: false,
@@ -8,9 +8,15 @@ $.jQTouch({
 
 $(document).ready(function() {
     // Load recently uploaded Flickr images
-    $.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&per_page=20&extras=url_sq&api_key=10e622bec86551f6633eea25318b2559&jsoncallback=?', function(data) {
+    $.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&per_page=20&extras=url_sq,url_z&api_key=10e622bec86551f6633eea25318b2559&jsoncallback=?', function(data) {
         $.each(data.photos.photo, function(num,photo) {
-            $('#photos').append('<img src="' + photo.url_sq + '">');
+            var img = $('<img src="' + photo.url_sq + '" data-largeurl="' + photo.url_z + '">');
+            $(img).bind('click', function(e) {
+                e.preventDefault();
+                $('#large-image').html('<img src="' + photo.url_z + '">');
+                jQT.goTo('#defails', 'fade');
+            });
+            $('#photos').append(img);
         });
     });
     

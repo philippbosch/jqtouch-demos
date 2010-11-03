@@ -15,3 +15,7 @@
     margin-right: 4px;
     margin-bottom: 4px;
 }
+
+#large-image img {
+    width: 100%;
+}
