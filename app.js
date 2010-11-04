@@ -8,7 +8,7 @@ $.jQTouch({
 
 $(document).ready(function() {
     // Load recently uploaded Flickr images
-    $.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&per_page=20&extras=url_sq&api_key=10e622bec86551f6633eea25318b2559&jsoncallback=?', function(data) {
+    $.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&per_page=20&extras=url_sq&api_key=c5f8fb0e77ad648624b8813aa00e8e47&jsoncallback=?', function(data) {
         $.each(data.photos.photo, function(num,photo) {
             $('#photos').append('<img src="' + photo.url_sq + '">');
         });
